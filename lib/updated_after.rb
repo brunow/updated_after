@@ -8,13 +8,13 @@ module UpdatedAfter
 
   module ClassMethods
     def updated_after(last_updated_at = nil)
-      where("#{table_name}.updated_at >= ?", last_updated_at || 0)
+      where("#{table_name}.updated_at > ?", last_updated_at || 0)
     end
   end
 
   module InstanceMethods
     def updated_after(last_updated_at = nil)
-      where("#{table_name}.updated_at >= ?", last_updated_at || 0)
+      where("#{table_name}.updated_at > ?", last_updated_at || 0)
     end
   end
 end
